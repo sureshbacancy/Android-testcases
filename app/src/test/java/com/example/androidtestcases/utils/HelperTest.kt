@@ -1,12 +1,26 @@
 package com.example.androidtestcases.utils
 
+import org.junit.After
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 /**
  * Created by admin on 29/11/23.
  */
 class HelperTest {
+
+    @Before
+    fun setUp(){
+        println("This will call before every test case")
+    }
+
+    @After
+    fun tearDown(){
+        println("This is will call after every test case")
+    }
+
+
 
     @Test
     fun isPalindrome() {
@@ -18,7 +32,6 @@ class HelperTest {
         val result = helper.isPalindrome("Hello")
         //First and last characters should be same == true else false
         //Output = false
-
 
         //Assert
         Assert.assertEquals(false, result)
